@@ -38,5 +38,14 @@ public class Plantation {
 	public void setJardin(Jardin jardin) {
 		this.jardin = jardin;
 	}
+	
+	@SuppressWarnings("null")
+	public ArrayList<CaseCultivable> voisins(){
+		ArrayList<CaseCultivable> voisins = null;
+		for(int i=0;i<planches.size();i++){
+			voisins.addAll(planches.get(i).voisins());
+		}
+		return voisins;
+	}
 
 }

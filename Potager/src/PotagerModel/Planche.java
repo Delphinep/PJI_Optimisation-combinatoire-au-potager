@@ -1,5 +1,6 @@
 package PotagerModel;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -42,5 +43,14 @@ public class Planche {
 	public LinkedList<Planche> planchesVoisines(){
 		LinkedList<Planche> planchesVoisines = new LinkedList<Planche>();
 		return planchesVoisines;
+	}
+
+	@SuppressWarnings("null")
+	public ArrayList<CaseCultivable> voisins() {
+		ArrayList<CaseCultivable> voisins = null;
+		for(int i=0;i<cases.size();i++){
+			voisins.addAll(cases.get(i).voisines());
+		}
+		return voisins;
 	}
 }

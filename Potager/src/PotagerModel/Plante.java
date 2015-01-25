@@ -9,7 +9,6 @@ public class Plante {
 	 */
 	public String getNom() {
 		return nom;
-		/* test */
 	}
 
 	/**
@@ -34,7 +33,7 @@ public class Plante {
 	}
 
 	private String nom;
-	private HashMap<String, Integer> affinites;
+	public HashMap<String, Integer> affinites;
 
 	public Plante(String nom) {
 		this.nom = nom;
