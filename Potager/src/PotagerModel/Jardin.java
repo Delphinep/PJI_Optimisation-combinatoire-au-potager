@@ -34,6 +34,20 @@ public class Jardin {
 		this.plantations = plantations;
 	}
 
+	/**
+	 * @return the terrain
+	 */
+	public CaseTerrain[][] getTerrain() {
+		return terrain;
+	}
+
+	/**
+	 * @param terrain the terrain to set
+	 */
+	public void setTerrain(CaseTerrain[][] terrain) {
+		this.terrain = terrain;
+	}
+
 	public LinkedList<CaseTerrain> voisinsCase(int x, int y){
 		LinkedList<CaseTerrain> voisins = new LinkedList<CaseTerrain>();
 		CaseTerrain caseTerrain;
