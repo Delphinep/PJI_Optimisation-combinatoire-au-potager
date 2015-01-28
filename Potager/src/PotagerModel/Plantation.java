@@ -6,6 +6,7 @@ public class Plantation {
 
 	private ArrayList<Planche> planches;
 	private Jardin jardin;
+	private Plante[] aPlanter;
 	
 	public Plantation() {
 		// TODO Auto-generated constructor stub
@@ -39,6 +40,20 @@ public class Plantation {
 		this.jardin = jardin;
 	}
 	
+	/**
+	 * @return the aPlanter
+	 */
+	public Plante[] getaPlanter() {
+		return aPlanter;
+	}
+
+	/**
+	 * @param aPlanter the aPlanter to set
+	 */
+	public void setaPlanter(Plante[] aPlanter) {
+		this.aPlanter = aPlanter;
+	}
+
 	@SuppressWarnings("null")
 	public ArrayList<CaseCultivable> voisins(){
 		ArrayList<CaseCultivable> voisins = null;

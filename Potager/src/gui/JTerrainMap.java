@@ -12,6 +12,7 @@ import PotagerModel.Jardin;
 import PotagerModel.SolType;
 
 
+
 @SuppressWarnings("serial")
 public class JTerrainMap extends JComponent {
 
