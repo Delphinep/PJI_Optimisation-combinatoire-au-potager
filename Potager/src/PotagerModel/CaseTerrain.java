@@ -55,6 +55,10 @@ public class CaseTerrain {
 	public int getX() {
 		return x;
 	}
+	
+	public void setX(int x){
+		this.x=x;
+	}
 
 	/**
 	 * @return the y
@@ -63,6 +67,9 @@ public class CaseTerrain {
 		return y;
 	}
 
+	public void setY(int y){
+		this.y=y;
+	}
 	/**
 	 * @return the culture
 	 */

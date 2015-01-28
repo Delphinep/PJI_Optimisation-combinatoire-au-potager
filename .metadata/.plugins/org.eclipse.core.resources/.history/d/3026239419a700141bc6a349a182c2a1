@@ -1,0 +1,27 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import java.util.LinkedList;
+
+import org.junit.Test;
+
+import PotagerModel.CaseTerrain;
+import PotagerModel.Jardin;
+
+public class jardinTest {
+
+	@Test
+	public void testVoisinsCases() {
+		Jardin jardin = new Jardin(10,30);
+		LinkedList<CaseTerrain> voisins = jardin.voisinsCase(0, 0);
+		LinkedList<CaseTerrain> resultatAttendu = new LinkedList<CaseTerrain>();
+		boolean res = true;
+		
+		resultatAttendu.add(jardin.getTerrain()[1][1]);
+		resultatAttendu.add(jardin.getTerrain()[0][1]);
+		resultatAttendu.add(jardin.getTerrain()[1][0]);
+		fail("Not yet implemented"); // TODO
+	}
+
+}

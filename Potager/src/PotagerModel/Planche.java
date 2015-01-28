@@ -45,9 +45,8 @@ public class Planche {
 		return planchesVoisines;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<CaseCultivable> voisins() {
-		ArrayList<CaseCultivable> voisins = null;
+		ArrayList<CaseCultivable> voisins = new ArrayList<CaseCultivable>();
 		for(int i=0;i<cases.size();i++){
 			voisins.addAll(cases.get(i).voisines());
 		}

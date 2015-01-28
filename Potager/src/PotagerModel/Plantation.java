@@ -54,9 +54,8 @@ public class Plantation {
 		this.aPlanter = aPlanter;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<CaseCultivable> voisins(){
-		ArrayList<CaseCultivable> voisins = null;
+		ArrayList<CaseCultivable> voisins = new ArrayList<CaseCultivable>();
 		for(int i=0;i<planches.size();i++){
 			voisins.addAll(planches.get(i).voisins());
 		}

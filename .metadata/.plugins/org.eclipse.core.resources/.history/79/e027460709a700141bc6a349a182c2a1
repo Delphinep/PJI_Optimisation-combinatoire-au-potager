@@ -1,0 +1,39 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class plancheTest {
+
+	@Test
+	public void testGetCases() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testSetCases() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testGetPlantation() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testSetPlantation() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testPlanchesVoisines() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testVoisins() {
+		fail("Not yet implemented"); // TODO
+	}
+
+}

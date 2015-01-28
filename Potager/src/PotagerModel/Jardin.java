@@ -10,11 +10,13 @@ public class Jardin {
 	private CaseTerrain[][] terrain; 
 	private LinkedList<String> plantations;
 
-	public Jardin(int largeur, int longueur) {
+	public Jardin(int longueur,int largeur) {
 		this.terrain = new CaseTerrain[longueur][largeur];
 		for (int i=0; i<this.terrain.length; i++){
 			for (int j=0; j<this.terrain[0].length; j++){
 				this.terrain[i][j] = new CaseTerrain();
+				this.terrain[i][j].setX(i);
+				this.terrain[i][j].setY(j);
 			}
 		}
 		this.setPlantations(new LinkedList<String>());
@@ -51,11 +53,11 @@ public class Jardin {
 	public LinkedList<CaseTerrain> voisinsCase(int x, int y){
 		LinkedList<CaseTerrain> voisins = new LinkedList<CaseTerrain>();
 		CaseTerrain caseTerrain;
-		for (int i=x-1; i<x+1; i++){
-			for (int j=y-1; j<y+1; j++){
+		for (int i=x-1; i<=x+1; i++){
+			for (int j=y-1; j<=y+1; j++){
 				try {
 					caseTerrain = this.terrain[i][j];
-					if (caseTerrain.soltype == SolType.CULTIVABLE){
+					if ((caseTerrain.getSoltype() == SolType.CULTIVABLE)&&((i!=x || j!=y))){
 						voisins.add(caseTerrain);
 					}
 				}
