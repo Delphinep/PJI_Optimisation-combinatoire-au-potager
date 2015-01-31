@@ -42,14 +42,30 @@ public class Planche {
 
 	public LinkedList<Planche> planchesVoisines(){
 		LinkedList<Planche> planchesVoisines = new LinkedList<Planche>();
+		LinkedList<CaseTerrain> casesVoisines = new LinkedList<CaseTerrain>();
+		for(int i=0;i<this.cases.size();i++){
+			CaseTerrain caseI = new CaseTerrain();
+			System.out.println(i);
+			caseI = this.cases.get(i).getCaseTerrain();
+		casesVoisines.addAll(this.plantation.getJardin().voisinsCase(caseI.getX(),caseI.getY()));
+		}
+		for(int j=0;j<casesVoisines.size();j++){
+			CaseTerrain caseJ = casesVoisines.get(j);
+			Planche plancheJ = caseJ.getCulture().getPlanche();
+			if((caseJ.getSoltype() == SolType.CULTIVABLE)&&(!this.equals(plancheJ)&&(!planchesVoisines.contains(plancheJ)))){
+				planchesVoisines.add(plancheJ);
+			}
+		}
 		return planchesVoisines;
 	}
-
-	public ArrayList<CaseCultivable> voisins() {
-		ArrayList<CaseCultivable> voisins = new ArrayList<CaseCultivable>();
-		for(int i=0;i<cases.size();i++){
-			voisins.addAll(cases.get(i).voisines());
+	
+	public int scoreCase(Plante plante, int x, int y){
+		int score = 0;
+		LinkedList<Planche> voisins = this.planchesVoisines();
+		for (Planche planche : voisins) {
+			//TODO
 		}
-		return voisins;
+		return score;
 	}
+
 }

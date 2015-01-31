@@ -1,6 +1,7 @@
 package PotagerModel;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Plantation {
 
@@ -54,12 +55,5 @@ public class Plantation {
 		this.aPlanter = aPlanter;
 	}
 
-	public ArrayList<CaseCultivable> voisins(){
-		ArrayList<CaseCultivable> voisins = new ArrayList<CaseCultivable>();
-		for(int i=0;i<planches.size();i++){
-			voisins.addAll(planches.get(i).voisins());
-		}
-		return voisins;
-	}
 
 }

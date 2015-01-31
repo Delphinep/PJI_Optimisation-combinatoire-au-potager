@@ -57,7 +57,7 @@ public class Jardin {
 			for (int j=y-1; j<=y+1; j++){
 				try {
 					caseTerrain = this.terrain[i][j];
-					if ((caseTerrain.getSoltype() == SolType.CULTIVABLE)&&((i!=x || j!=y))){
+					if (i!=x || j!=y){
 						voisins.add(caseTerrain);
 					}
 				}
@@ -65,6 +65,16 @@ public class Jardin {
 			}
 		}
 		return voisins;
+	}
+	
+	public int scoreCase(Plante plante, int x, int y){
+		int score = 0;
+		LinkedList<CaseTerrain> voisins = this.voisinsCase(x,y);
+		for (CaseTerrain caseTerrain : voisins) {
+			Plante planteVoisines = caseTerrain.getCulture().getPlante();
+			//TO CHECK score += plante.getAffinites().getValues(plante);
+		}
+		return score;
 	}
 
 

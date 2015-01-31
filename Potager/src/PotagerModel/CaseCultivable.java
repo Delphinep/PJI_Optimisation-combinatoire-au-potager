@@ -19,6 +19,10 @@ public class CaseCultivable {
 	public Plante getPlante() {
 		return plante;
 	}
+	
+	public CaseTerrain getCaseTerrain(){
+		return caseTerrain;
+	}
 
 	/**
 	 * @param plante the plante to set
@@ -69,6 +73,7 @@ public class CaseCultivable {
 		FIXE, VARIABLE
 	}
 	
+	/* Pas utilisé */
 	public LinkedList<CaseCultivable> voisines(){
 		LinkedList<CaseCultivable> voisinesCultivables = new LinkedList<CaseCultivable>();
 		LinkedList<CaseTerrain> voisinesTerrain = this.planche.getPlantation().getJardin().voisinsCase(this.caseTerrain.getX(), this.caseTerrain.getY());
