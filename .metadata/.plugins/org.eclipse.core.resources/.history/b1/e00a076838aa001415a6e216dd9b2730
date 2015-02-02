@@ -1,0 +1,86 @@
+package PotagerModel;
+
+import static org.junit.Assert.fail;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.LinkedList;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*	Jardin jardin = new Jardin(10,30);
+			LinkedList<CaseTerrain> voisins = jardin.voisinsCase(0, 0);
+			for(int i=0;i<voisins.size();i++){
+				System.out.print(voisins.get(i).getX()+" ");
+				System.out.println(voisins.get(i).getY());
+			}
+	}*/
+	/*	Jardin jardin = new Jardin(10,30);
+		LinkedList<CaseCultivable> casesPlanche1 = new LinkedList<CaseCultivable>();
+		for(int i=0;i<5;i++){
+			casesPlanche1.add(jardin.getTerrain()[i][0].getCulture());
+		}
+		for(int j=0;j<casesPlanche1.size();j++){
+			System.out.println(casesPlanche1.get(j));
+		}
+		Planche planche1 = new Planche();
+		planche1.setCases(casesPlanche1);
+		LinkedList<Planche> voisinesPlanche1 = planche1.planchesVoisines();
+	}
+*/
+		 /*
+         * Etape 1 : récupération d'une instance de la classe "DocumentBuilderFactory"
+         */
+        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            	
+        try {
+            /*
+             * Etape 2 : création d'un parseur
+             */
+            final DocumentBuilder builder = factory.newDocumentBuilder();
+			
+	    /*
+	     * Etape 3 : création d'un Document
+	     */
+	    final Document document= builder.parse(new File("repertoire.xml"));
+			
+	    //Affiche du prologue
+	    System.out.println("*************PROLOGUE************");
+	    System.out.println("version : " + document.getXmlVersion());
+	    System.out.println("encodage : " + document.getXmlEncoding());		
+            System.out.println("standalone : " + document.getXmlStandalone());
+					
+	    /*
+	     * Etape 4 : récupération de l'Element racine
+	     */
+	    final Element racine = document.getDocumentElement();
+		
+	    //Affichage de l'élément racine
+	    System.out.println("\n*************RACINE************");
+	    System.out.println(racine.getNodeName());}
+        catch (final ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        catch (final SAXException e) {
+            e.printStackTrace();
+        }
+        catch (final IOException e) {
+            e.printStackTrace();
+        }
+	}
+}

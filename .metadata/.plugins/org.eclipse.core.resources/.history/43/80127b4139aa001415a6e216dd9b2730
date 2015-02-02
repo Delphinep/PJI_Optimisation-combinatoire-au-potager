@@ -1,0 +1,69 @@
+package PotagerModel;
+
+import static org.junit.Assert.fail;
+
+import java.util.LinkedList;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*	Jardin jardin = new Jardin(10,30);
+			LinkedList<CaseTerrain> voisins = jardin.voisinsCase(0, 0);
+			for(int i=0;i<voisins.size();i++){
+				System.out.print(voisins.get(i).getX()+" ");
+				System.out.println(voisins.get(i).getY());
+			}
+	}*/
+	/*	Jardin jardin = new Jardin(10,30);
+		LinkedList<CaseCultivable> casesPlanche1 = new LinkedList<CaseCultivable>();
+		for(int i=0;i<5;i++){
+			casesPlanche1.add(jardin.getTerrain()[i][0].getCulture());
+		}
+		for(int j=0;j<casesPlanche1.size();j++){
+			System.out.println(casesPlanche1.get(j));
+		}
+		Planche planche1 = new Planche();
+		planche1.setCases(casesPlanche1);
+		LinkedList<Planche> voisinesPlanche1 = planche1.planchesVoisines();
+*/
+
+	
+	 
+	
+	public class TestNodeIterator {
+	
+	public static void main(String[] args) {
+	
+	try {
+	
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	
+	DocumentBuilder loader = factory.newDocumentBuilder();
+	
+	Document document = loader.parse("livres.xml");
+	
+	DocumentTraversal traversal = (DocumentTraversal) document;
+	
+	NodeIterator iterator = traversal.createNodeIterator(
+	
+	document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
+	
+	for (Node n = iterator.nextNode(); n != null; n = iterator.nextNode()) {
+	
+	System.out.println("Element: " + ((Element) n).getTagName());
+	
+	}
+	
+	} catch (Exception ex) {
+	
+	ex.printStackTrace();
+		}
+	}
+
+	}
+	
+	}
+		
+		
+}

@@ -14,7 +14,7 @@ public class Jardin {
 		this.terrain = new CaseTerrain[longueur][largeur];
 		for (int i=0; i<this.terrain.length; i++){
 			for (int j=0; j<this.terrain[0].length; j++){
-				this.terrain[i][j] = new CaseTerrain();
+				this.terrain[i][j] = new CaseTerrain(this);
 				this.terrain[i][j].setX(i);
 				this.terrain[i][j].setY(j);
 			}
@@ -72,7 +72,7 @@ public class Jardin {
 		LinkedList<CaseTerrain> voisins = this.voisinsCase(x,y);
 		for (CaseTerrain caseTerrain : voisins) {
 			Plante planteVoisines = caseTerrain.getCulture().getPlante();
-			//TO CHECK score += plante.getAffinites().getValues(plante);
+			 score += plante.getAffinites().get(plante.getNom());
 		}
 		return score;
 	}

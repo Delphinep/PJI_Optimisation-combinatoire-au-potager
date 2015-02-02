@@ -9,7 +9,8 @@ public class Plantation {
 	private Jardin jardin;
 	private Plante[] aPlanter;
 	
-	public Plantation() {
+	public Plantation(Jardin jardin) {
+		this.jardin = jardin;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -55,5 +56,43 @@ public class Plantation {
 		this.aPlanter = aPlanter;
 	}
 
+	
+	/* A optimiser */
+	public void algoGlouton(){
+		/* Initialisation */
+		int maxX = this.jardin.getTerrain().length;
+		int maxY = this.jardin.getTerrain()[0].length;
+		int aleaX = (int)(Math.random() * (maxX + 1));
+		int aleaY = (int)(Math.random() * (maxY + 1));
+		this.jardin.getTerrain()[aleaX][aleaY].getCulture().setPlante(this.getaPlanter()[0]);
+		//faire avec les planches
+		
+		int cpt = 1;
+		/* algo*/
+
+			LinkedList<CaseTerrain> voisins = this.jardin.voisinsCase(aleaX, aleaY);
+			/* Tant que toutes les cases ne sont pas remplies */
+			while(cpt != this.jardin.getTerrain().length*this.jardin.getTerrain()[0].length){
+				/* Pour chaque voisin, on calcule le score max */
+			for (CaseTerrain caseTerrain : voisins) {
+				if(caseTerrain.getCulture().getPlante() == null){
+					/* try catch */
+					int score = -8;
+					int scoreTmp;
+					Plante plante = this.aPlanter[0];
+					for (Plante aPlanter : this.aPlanter) {
+						scoreTmp = caseTerrain.getJardin().scoreCase(aPlanter,caseTerrain.getX(), caseTerrain.getY());
+						if (scoreTmp < score){
+							score = scoreTmp;
+							plante = aPlanter;
+						}
+					}
+					caseTerrain.getCulture().setPlante(plante);
+					cpt++;
+				}
+				voisins.addAll(caseTerrain.getJardin().voisinsCase(caseTerrain.getX(), caseTerrain.getY()));
+			}
+		}
+	}
 
 }

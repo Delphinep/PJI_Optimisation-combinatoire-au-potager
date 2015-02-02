@@ -1,5 +1,7 @@
 package PotagerModel;
 
+import java.util.LinkedList;
+
 /**
  * Classe de représentation d'une partie du jardin
  */
@@ -10,9 +12,12 @@ public class CaseTerrain {
 	private int x;
 	private int y;
 	private CaseCultivable culture;
-
-	public CaseTerrain() {
+	private Jardin jardin;
+	
+	public CaseTerrain(Jardin jardin) {
+		this.jardin = jardin;
 		this.soltype = SolType.CULTIVABLE;
+		this.culture = new CaseCultivable(this);
 	}	
 
 	/**
@@ -22,7 +27,9 @@ public class CaseTerrain {
 		return soltype;
 	}
 
-
+	public Jardin getJardin(){
+		return this.jardin;
+	}
 
 	/**
 	 * @param soltype the soltype to set
@@ -76,8 +83,6 @@ public class CaseTerrain {
 	public CaseCultivable getCulture() {
 		return culture;
 	}
-
-
 
 
 }

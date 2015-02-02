@@ -61,7 +61,8 @@ public class CaseCultivable {
 	}
 
 	
-	public CaseCultivable() {
+	public CaseCultivable(CaseTerrain caseTerrain) {
+		this.caseTerrain = caseTerrain;
 		// TODO Auto-generated constructor stub
 	}
 

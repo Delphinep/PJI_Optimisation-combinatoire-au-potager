@@ -1,0 +1,66 @@
+package PotagerModel;
+
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.traversal.DocumentTraversal;
+
+import org.w3c.dom.traversal.NodeFilter;
+
+import org.w3c.dom.traversal.NodeIterator;
+
+import java.util.LinkedList;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*	Jardin jardin = new Jardin(10,30);
+			LinkedList<CaseTerrain> voisins = jardin.voisinsCase(0, 0);
+			for(int i=0;i<voisins.size();i++){
+				System.out.print(voisins.get(i).getX()+" ");
+				System.out.println(voisins.get(i).getY());
+			}
+	}*/
+		Jardin jardin = new Jardin(10,30);
+		LinkedList<CaseCultivable> casesPlanche1 = new LinkedList<CaseCultivable>();
+		for(int i=0;i<5;i++){
+			System.out.println(jardin.getTerrain()[i][0].getX());
+			casesPlanche1.add(jardin.getTerrain()[i][0].getCulture());
+		}
+
+		Planche planche1 = new Planche();
+		planche1.setCases(casesPlanche1);
+		LinkedList<Planche> voisinesPlanche1 = planche1.planchesVoisines();
+	}
+
+	/*	
+	try {
+	
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	
+	DocumentBuilder loader = factory.newDocumentBuilder();
+	
+	Document document = loader.parse("plantes2.xml");
+	
+	DocumentTraversal traversal = (DocumentTraversal) document;
+	
+	NodeIterator iterator = traversal.createNodeIterator(
+	
+	document.getDocumentElement(), NodeFilter.SHOW_ELEMENT, null, true);
+	
+	for (Node n = iterator.nextNode(); n != null; n = iterator.nextNode()) {
+	
+	System.out.println("Element: " + ((Element) n).getTagName());
+	
+	}
+	
+	} catch (Exception ex) {
+	
+	ex.printStackTrace();
+		}
+	}	*/
+}

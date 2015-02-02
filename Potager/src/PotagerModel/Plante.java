@@ -1,6 +1,15 @@
 package PotagerModel;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class Plante {
 
@@ -22,6 +31,7 @@ public class Plante {
 	 * @return the affinites
 	 */
 	public HashMap<String, Integer> getAffinites() {
+
 		return affinites;
 	}
 
@@ -34,8 +44,10 @@ public class Plante {
 
 	private String nom;
 	public HashMap<String, Integer> affinites;
+	public String listeAffinites;
 
-	public Plante(String nom) {
+	public Plante(String nom, String listeAffinites) {
+		this.listeAffinites = listeAffinites;
 		this.nom = nom;
 		/*
 		 * gestion du fichier xml pour créer la HashMap d'affinités
